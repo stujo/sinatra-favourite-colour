@@ -2,18 +2,20 @@ require 'sinatra/activerecord'
 require 'sinatra'
 require_relative 'environment'
 
-helpers do
-  def hello
-    puts "Hello"
-  end
-end
+# helpers do
+#   def hello
+#     puts "Hello"
+#   end
+# end
 
 get '/' do
   redirect '/colors'
 end
 
 get '/colors' do
-  hello
-  "hello colors"
+  @colors = Color.all.order(:vote_count => :asc)
+  erb :'colors/index'
 end
+
+
 
