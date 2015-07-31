@@ -1,1 +1,20 @@
-INDEX
+
+<div class="row">
+
+<% @colors.each do |color| %>
+  <div class="col s12 m4">
+    <div class="card">
+      <div class="card-image" style="height: 6em; background-color: #<%= color.hex_code %>;">
+        <span class="card-title"><%= color.hex_code %></span>
+      </div>
+      <div class="card-content">
+        <p><%= color.vote_count %> votes</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Vote For Me!</a>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+</div>

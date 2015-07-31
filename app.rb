@@ -18,4 +18,8 @@ get '/colors' do
 end
 
 
-
+get '/nocss' do
+  @skip_css = true
+  @colors = Color.all.order(:vote_count => :asc)
+  erb :'colors/index'
+end  
