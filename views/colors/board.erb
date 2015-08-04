@@ -1,0 +1,12 @@
+
+
+<ul id="color_leaderboard" class="collection">
+  <% @colors.each do |color| %>
+    <li class="collection-item avatar">
+      <div style="background-color: #<%= color.hex_code %>;" class="circle z-depth-1"></div>
+      <span class="title"><%= color.name %></span>
+      <p>#<%= color.hex_code %></p>
+      <p><%= color.vote_count %> votes</p>
+    </li>
+  <% end %>
+</ul>

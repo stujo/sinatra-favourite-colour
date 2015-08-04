@@ -17,10 +17,9 @@ ActiveRecord::Schema.define(version: 20150730224246) do
   enable_extension "plpgsql"
 
   create_table "colors", force: :cascade do |t|
+    t.string  "name"
     t.string  "hex_code"
     t.integer "vote_count", default: 0
   end
-
-  add_index "colors", ["hex_code"], name: "index_colors_on_hex_code", unique: true, using: :btree
 
 end

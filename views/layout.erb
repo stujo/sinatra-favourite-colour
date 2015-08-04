@@ -7,7 +7,8 @@
 
     <% unless @skip_css %>
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>  
+    <link type="text/css" rel="stylesheet" href="css/favcolor.css"  media="screen,projection"/>
     <% end %>
 
     <!--Let browser know website is optimized for mobile-->
@@ -18,7 +19,7 @@
      <nav>
         <div class="nav-wrapper">
           <div class="container">
-            <a href="#" class="brand-logo">Favourite Colours</a>
+            <a href="/colors" class="brand-logo">Favourite Colours</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="https://github.com/stujo/sinatra-favourite-colour">GitHub</a></li>
               <% unless @skip_css %>
@@ -26,6 +27,7 @@
               <% else %>
                 <li><a href="/colors">With CSS</a></li>
               <% end %>  
+              <li><a href="/board">Leaderboard</a></li>
             </ul>
           </div>
         </div>
@@ -38,6 +40,7 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.js"></script>
+      <script type="text/javascript" src="js/voting.js"></script>
     </body>
   </html>
         

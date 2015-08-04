@@ -1,0 +1,24 @@
+
+.color-swatch {
+  height: 6em; 
+}
+
+.highlight {
+  -webkit-opacity: 0.25;
+  -moz-opacity: 0.25;
+  opacity: 0.25;
+
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+.color-selected .color-vote {
+  display: none;
+}
+
+.color-unselected .color-unvote {
+  display: none;
+}

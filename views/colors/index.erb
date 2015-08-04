@@ -1,17 +1,25 @@
 
-<div class="row">
+<div id="color_voting" class="row">
 
 <% @colors.each do |color| %>
-  <div class="col s12 m4">
-    <div class="card">
-      <div class="card-image" style="height: 6em; background-color: #<%= color.hex_code %>;">
-        <span class="card-title"><%= color.hex_code %></span>
+  <div class="col s12 m4 l4">
+    <div class="card color-card <%= color.selected ? 'color-selected z-depth-5' : 'color-unselected' %>">
+      <div class="card-image color-swatch" style="background-color: #<%= color.hex_code %>;">
+        <span class="card-title" style="color: #<%= color.inverse_color %>;"><%= color.name %></span>
       </div>
-      <div class="card-content">
-        <p><%= color.vote_count %> votes</p>
+      <div class="card-content center">
+        <p><span class="vote-count"><%= color.vote_count %></span> votes</p>
       </div>
-      <div class="card-action">
-        <a href="#">Vote For Me!</a>
+      <div class="card-action center">
+
+        <form class="color-vote" action="/color/<%= color.id %>/vote" method="post">
+          <input class="btn vote-button" type="submit" value="Vote!"/>
+        </form>        
+
+        <form class="color-unvote" action="/color/<%= color.id %>/unvote" method="post">
+          <input class="btn materialize-red lighten-3 unvote-button" type="submit" value="Your Pick!"/>
+        </form>        
+
       </div>
     </div>
   </div>
