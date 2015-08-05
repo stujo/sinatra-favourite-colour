@@ -15,32 +15,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
+    <nav class="indigo" role="navigation">
+      <div class="nav-wrapper container">
+        <a href="/colors" class="brand-logo">Favourite Colours</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+           <%= erb(:'shared/nav_menu') %>
+        </ul>
 
-     <nav>
-        <div class="nav-wrapper">
-          <div class="container">
-            <a href="/colors" class="brand-logo">Favourite Colours</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="https://github.com/stujo/sinatra-favourite-colour">GitHub</a></li>
-              <% unless @skip_css %>
-                <li><a href="/nocss">No CSS</a></li>
-              <% else %>
-                <li><a href="/colors">With CSS</a></li>
-              <% end %>  
-              <li><a href="/board">Leaderboard</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        <ul class="side-nav" id="mobile-demo">
+           <%= erb(:'shared/nav_menu') %>
+        </ul>
 
-      <div class="container">
-        <%= yield %>
       </div>
+    </nav>
 
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.js"></script>
-      <script type="text/javascript" src="js/voting.js"></script>
-    </body>
-  </html>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bin/materialize.js"></script>
+    <script type="text/javascript" src="js/voting.js"></script>
+    <script>
+      $(document).ready(function(){ 
+          $(".button-collapse").sideNav(); 
+        } 
+      );
+    </script>
+  </body>
+</html>
         

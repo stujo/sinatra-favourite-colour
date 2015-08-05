@@ -41,5 +41,5 @@ $(function(){
   });
   $('#color_voting').on('submit', '.color-unvote', function(e){
     vote_update(e, $(this), false);
-  });
+  });  
 });
