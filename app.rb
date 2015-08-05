@@ -28,6 +28,9 @@ helpers do
     selected_ids_from_cookie.include?(id.to_s)
   end
 
+  def active_page?(path)
+    request.path_info == path
+  end
 end
 
 get '/' do

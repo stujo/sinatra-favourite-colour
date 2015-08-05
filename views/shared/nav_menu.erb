@@ -4,4 +4,11 @@
 <% else %>
   <li><a href="/colors">With CSS</a></li>
 <% end %>  
+
+<% unless active_page? '/board' %>
 <li><a href="/board">Leaderboard</a></li>
+<% end %>
+
+<% unless active_page? '/colors' %>
+<li><a href="/colors">Vote!</a></li>
+<% end %>
