@@ -38,7 +38,7 @@ get '/' do
 end
 
 get '/colors' do
-  @colors = Color.all.shuffle
+  @colors = Color.all.order(:name => :asc)
   selected = selected_ids_from_cookie
   @colors.each do |color|
     color.selected = selected.include?(color.id.to_s)
